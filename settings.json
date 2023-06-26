@@ -1,5 +1,5 @@
 {
-    "serial_port": "COM30",
+    "serial_port": "COM4",
     "programmer_serial_number": 124512,
     "chip_part": "PIC16F627A",
     "last_user": "dmh",
@@ -9,6 +9,7 @@
     "font_size": 13,
     "font_style": "normal",
     "font_color": "#000000",
-    "skip_login": false,
+    "arduino_instance_id": "100",
+    "skip_login": true,
     "debug": true
 }
