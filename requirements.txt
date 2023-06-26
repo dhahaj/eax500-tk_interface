@@ -1,0 +1,6 @@
+DateTime==4.3
+pymata4==1.11
+pyserial==3.5
+pytz==2023.3
+subprocess.run==0.0.8
+zope.interface==6.0
