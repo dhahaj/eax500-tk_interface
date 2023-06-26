@@ -1,0 +1,14 @@
+{
+    "serial_port": "COM30",
+    "programmer_serial_number": 124512,
+    "chip_part": "PIC16F627A",
+    "last_user": "dmh",
+    "testing_speed": 0.4,
+    "auto_test": true,
+    "font_family": "Consolas",
+    "font_size": 13,
+    "font_style": "normal",
+    "font_color": "#000000",
+    "skip_login": false,
+    "debug": true
+}
