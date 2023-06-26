@@ -5,11 +5,12 @@ This is a GUI for the *EAX-500*. It is written in Python and uses the Tkinter li
 ## Installation
 
 1. Install [Python 3.7+]
-2. Install [pipenv]
-3. Clone this repository
-4. Run `pipenv install` in the repository directory
-5. Run `pipenv run python main.py` to start the GUI
-6. Run `pipenv run python main.py --help` for more options
+2. Clone this repository
+3. Install tkinter. This can be done by 
+4. This project uses [pyfirmata4] to communicate with the *EAX-500* over USB. This can be installed by running `pip install pyfirmata4`.
+5. Run `pipenv install` in the repository directory
+6. Run `pipenv run python main.py` to start the GUI
+7. Run `pipenv run python main.py --help` for more options
 
 ### Building
 
@@ -31,13 +32,12 @@ This project is licensed under the MIT License - see the [LICENSE] file for deta
 
 ### TODO
 
-- [ ] Add USB functionality
+- [x] Add USB functionality
 - [ ] Add a status bar
 - [ ] Add a toolbar
-- [ ] Add preferences
+- [x] Add preferences
 - [ ] Add a help dialog
-- [ ] Add a serial port settings dialog
-- [ ] Set the window font
+- [x] Set the window font
 - [ ] Add device selection
-- [ ] Add test speed slider
+- [x] Add test speed slider
 - [ ] Add font selection
