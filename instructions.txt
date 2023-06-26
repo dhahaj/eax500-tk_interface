@@ -1,9 +1,9 @@
-****** EAX-2500 Testing Software *******
+****** EAX-500 Testing Software *******
 
 Equipment Needed:
 	1) T-683 Test Base
-	2) EAX-2500 Test Head
-	3) Assembled 102618 PWA
+	2) EAX-500 Test Head
+	3) Assembled 102605 PWA
 
 Setup instructions:
 	1) Head unit is connected and secured to the test fixture.
