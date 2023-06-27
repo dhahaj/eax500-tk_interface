@@ -1,0 +1,17 @@
+[
+    {
+        "username": "dmh",
+        "password": "d853",
+        "admin": true
+    },
+    {
+        "username": "sm",
+        "password": "1234",
+        "admin": false
+    },
+    {
+        "username": "amdin",
+        "password": "password",
+        "admin": false
+    }
+]
