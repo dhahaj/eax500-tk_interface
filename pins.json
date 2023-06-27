@@ -1,0 +1,28 @@
+{
+    "pins": [
+        {
+            "pin_number": 2,
+            "function": "low battery",
+            "io_mode": "output",
+            "pullup_enabled": false
+        },
+        {
+            "pin_number": 4,
+            "io_mode": "output",
+            "function": "testing indicator",
+            "pullup_enabled": false
+        },
+        {
+            "pin_number": 12,
+            "io_mode": "output",
+            "function": "battery",
+            "pullup_enabled": false
+        },
+        {
+            "pin_number": 13,
+            "io_mode": "output",
+            "function": "indicator",
+            "pullup_enabled": false
+        }
+    ]
+}
