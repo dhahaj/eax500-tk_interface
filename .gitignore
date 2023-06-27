@@ -4,3 +4,5 @@ __pycache__/
 logs/
 logs.zip
 dist/
+debug.log
+test.json
