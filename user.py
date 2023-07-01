@@ -32,9 +32,9 @@ class User:
         ]
 
         self.filename = filename
-        self.users = self.load_users()
+        self.users = self.load()
 
-    def load_users(self, filename="users.json"):
+    def load(self, filename="users.json"):
         if os.path.exists(filename):
             with open(filename, "r") as file:
                 try:
