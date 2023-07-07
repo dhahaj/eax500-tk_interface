@@ -1,3 +1,24 @@
 {
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "actionButtons": {
+        "defaultColor": "#ff0034",
+        "loadNpmCommands": false,
+        "reloadButton": null,
+        "commands": [
+          {
+            "name": "Run",
+            "singleInstance": true,
+            "color": "#ffe65c",
+            "cwd": "${workspaceFolder}",
+            "command": ".\\venv\\Scripts\\python.exe eax500.py"
+          },
+          {
+            "name": "Build",
+            "singleInstance": true,
+            "color": "#ff0034",
+            "cwd": "${workspaceFolder}",
+            "command": "venv\\Scripts\\pyinstaller eax500.py --onefile --noconsole --icon images/icon.ico"
+          }
+        ]
+    }
 }

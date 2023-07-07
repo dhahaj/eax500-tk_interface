@@ -6,3 +6,5 @@ logs.zip
 dist/
 debug.log
 test.json
+html/
+*.html

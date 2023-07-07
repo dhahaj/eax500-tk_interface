@@ -1,15 +1,15 @@
 {
-    "serial_port": "COM4",
+    "serial_port": "COM7",
     "programmer_serial_number": "1E660",
     "chip_part": "PIC16F627A",
-    "last_user": "dmh",
-    "testing_speed": 1.85,
+    "last_user": "sm",
+    "testing_speed": 1.0,
     "auto_test": false,
-    "font_family": "Consolas",
-    "font_size": 15,
-    "font_style": "normal",
+    "font_family": "Cambria",
+    "font_size": 16,
+    "font_style": "bold",
     "font_color": "#000000",
     "skip_login": true,
-    "arduino_instance_id": 100,
+    "arduino_instance_id": 1,
     "debug": true
 }

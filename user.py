@@ -32,10 +32,20 @@ class User:
         ]
 
         self.filename = filename
-        self.users = self.load()
+        self.users = self.load(self.filename)
 
-    def load(self, filename="users.json"):
+    def load(self, filename=None):
+        """
+        Load the users from a JSON file.
+
+        :param filename: The filename to load the users from.
+        """
+        if filename is None:
+            filename = self.filename
+        
+        # Check if the file exists
         if os.path.exists(filename):
+            # Load settings from file
             with open(filename, "r") as file:
                 try:
                     data = json.load(file)
@@ -47,7 +57,7 @@ class User:
                 except json.JSONDecodeError:
                     print("Failed to decode JSON from user file.")
                     self.users = []
-        else:
+        else: # File does not exist
             print(f"User file {filename} does not exist.")
             self.users = []
         if self.users is None:
@@ -87,13 +97,14 @@ class User:
         :param admin: True if the user is an admin, False otherwise.
         :return: True if the user was added, False otherwise.
         """
-        if username not in self.users:
-            self.users[username] = {'password': password}
-            self.save_users()
-            return True
-        else:
-            print(f"User {username} already exists.")
-            return False
+        # Check if the user already exists
+        for user in self.users:
+            if user['username'] == username:
+                print(f"User {username} already exists.")
+                return False
+        self.users[username] = {'password': password}
+        self.save_users()
+        return True
 
     def remove_user(self, username):
         """
@@ -129,5 +140,64 @@ class User:
         :return: A list of all users.
         """
         return [user['username'] for user in self.users]
+    
+    def get_user(self, username):
+        """
+        Get a single user.
 
-        
+        :param username: The username to get.
+        :return: The user if it exists, None otherwise.
+        """
+        for user in self.users:
+            if user['username'] == username:
+                return user
+        return None
+
+    @staticmethod
+    def make_user(username, password, admin):
+        return SingleUser(username, password, admin)
+    
+    def print_users(self):
+        """
+        Print all users.
+        """
+        for user in self.users:
+            print(user)
+
+
+
+class SingleUser:
+    """
+    This class defines a single user.
+    """
+    def __init__(self, username, password, admin=False):
+        """
+        Initialize the User class.
+
+        :param username: The username of the user.
+        :param password: The password of the user.
+        :param admin: True if the user is an admin, False otherwise.
+        """
+        self.username = username
+        self.password = password
+        self.admin = admin
+
+    def __str__(self):
+        return f"User: {self.username}, Admin: {self.admin}"
+    
+    def is_admin(self):
+        """
+        Check if the user is an admin.
+
+        :return: True if the user is an admin, False otherwise.
+        """
+        return self.admin
+    
+    def check_password(self, password):
+        """
+        Check if the password matches the user's password.
+
+        :param password: The password to check.
+        :return: True if the password matches, False otherwise.
+        """
+        return self.password == password

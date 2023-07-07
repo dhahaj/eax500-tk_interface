@@ -4,10 +4,7 @@ from applogger import AppLogger
 import threading
 import json
 import os
-import asyncio
-import time
 import traceback
-import logging
 
 
 class USBHandler:
@@ -72,7 +69,8 @@ class USBHandler:
         """Connect to the Arduino board."""
         if not self.device_connected and self.board is None:
             self.check_device_thread = threading.Thread(
-                target=self.check_device_connection
+                target=self.check_device_connection,
+                # shutdown_on_exception=False,
             )
             self.check_device_thread.start()
             if self.debug:
@@ -95,8 +93,9 @@ class USBHandler:
             if not self.device_connected:
                 self.board = pymata4.Pymata4(  # Create a new Pymata4 instance
                     com_port=self.port,
-                    arduino_wait=2,
+                    arduino_wait=4,
                     arduino_instance_id=self.arduino_instance_id,
+                    shutdown_on_exception=False,
                 )
                 self.load_pins()  # Load the pins from the pins.json file
                 self.set_pin_modes()  # Set the pin modes
